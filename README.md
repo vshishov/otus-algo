@@ -1,3 +1,3 @@
 # otus-algo
 
-Homeworks Otus algo course
+Homeworks of Otus algo course
