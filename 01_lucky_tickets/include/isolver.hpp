@@ -2,14 +2,12 @@
 
 #include <string>
 
-namespace solver
-{
-  
+namespace solver {
+
 class ISolver {
 public:
-  virtual ~ISolver() = default;
-
-  virtual std::string Solve(const std::string& input) = 0;
+    virtual ~ISolver() = default;
+    virtual std::string Solve(const std::string&) = 0;
 };
 
-} // namespace solver
+}  // namespace solver

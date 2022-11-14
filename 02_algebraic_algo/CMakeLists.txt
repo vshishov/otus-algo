@@ -1,11 +1,12 @@
 cmake_minimum_required(VERSION 3.12)
-project(lucky_tickets)
+project(algebraic_algo)
 
 include_directories("include/")
 
 add_executable(
-  lucky_tickets
+  algebraic_algo
   src/main.cpp
-  src/ticket_solver.cpp
+  src/power_solver.cpp
+  src/fibonacci_solver.cpp
   src/tester.cpp
 )

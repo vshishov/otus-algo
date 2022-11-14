@@ -35,3 +35,4 @@ public:
 private:
     std::ostream& stream_out{std::cout};
 };
+
