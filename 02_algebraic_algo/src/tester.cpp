@@ -31,7 +31,6 @@ void Tester::Run(const std::shared_ptr<solver::ISolver>& solver, const std::stri
 
         auto start = std::chrono::steady_clock::now();
         auto solver_result = solver->Solve(test_input);
-//        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         auto dur = std::chrono::steady_clock::now() - start;
         auto dur_ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
         if (solver_result == test_result) {
@@ -43,8 +42,8 @@ void Tester::Run(const std::shared_ptr<solver::ISolver>& solver, const std::stri
         }
         ++i;
 
-        if (i > 7 )
-            return ;
+//        if (i > 1 )
+//            return ;
     }
 }
 

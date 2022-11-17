@@ -7,6 +7,7 @@ add_executable(
   algebraic_algo
   src/main.cpp
   src/power_solver.cpp
+  src/prime_solver.cpp
   src/fibonacci_solver.cpp
   src/tester.cpp
 )
