@@ -4,9 +4,9 @@
 #include <iomanip>
 #include <iostream>
 #include <iterator>
-#include "thread"
 
 #include "profiler.hpp"
+#include "thread"
 
 namespace tester {
 void Tester::Run(const std::shared_ptr<solver::ISolver>& solver, const std::string& test_path) {
@@ -34,7 +34,8 @@ void Tester::Run(const std::shared_ptr<solver::ISolver>& solver, const std::stri
         auto dur = std::chrono::steady_clock::now() - start;
         auto dur_ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
         if (solver_result == test_result) {
-            std::cout << "[Test " << i << "]: \033[1;32mOK\033[0m (" << dur_ms << "ms)" <<std::endl;
+            std::cout << "[Test " << i << "]: \033[1;32mOK\033[0m (" << dur_ms << "ms)"
+                      << std::endl;
         } else {
             std::cout << "[Test " << i << "]: \033[1;31mFAILED\033[0m" << std::endl;
             std::cout << std::setw(10) << "Expected: " << test_result << std::endl;
@@ -42,8 +43,8 @@ void Tester::Run(const std::shared_ptr<solver::ISolver>& solver, const std::stri
         }
         ++i;
 
-//        if (i > 1 )
-//            return ;
+        if (i > 10)
+            return;
     }
 }
 
