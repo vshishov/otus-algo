@@ -144,9 +144,9 @@ uint64_t EratosEvenPrimeSolver::Prime(int N) {
 }
 
 
-///-------------------------
+///------------------------------
 /// class EratosOptimPrimeSolver
-///-------------------------
+///------------------------------
 uint64_t EratosEvenBitsPrimeSolver::Prime(int N) {
     if (N == 1) return 0;
     if (N == 2) return 1;
@@ -179,10 +179,8 @@ uint64_t EratosEvenBitsPrimeSolver::Prime(int N) {
     return count;
 }
 
-
-
 ///-------------------------
-/// class BitArray
+///     class BitArray
 ///-------------------------
 BitArray::BitArray(std::size_t N) {
     auto size = N / BasketSize + 1;

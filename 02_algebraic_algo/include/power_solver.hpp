@@ -11,17 +11,25 @@ public:
     ResultData Solve(const InputData&) override;
 
 public:
-    virtual double Pow(double base, uint64_t exp) = 0;
+    virtual long double Pow(long double base, uint64_t exp) = 0;
 };
 
+/// O(N)
 class IterPowerSolver : public BasePowerSolver {
 public:
-    double Pow(double base, uint64_t exp);
+    long double Pow(long double base, uint64_t exp);
 };
 
+/// O(N/2+LogN) = O(N)
+class MultiPowerSolver : public BasePowerSolver {
+public:
+    long double Pow(long double base, uint64_t exp);
+};
+
+/// O(LogN)
 class BinaryPowerSolver : public BasePowerSolver {
 public:
-    double Pow(double base, uint64_t exp);
+    long double Pow(long double base, uint64_t exp);
 };
 
 
