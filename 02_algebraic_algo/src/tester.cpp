@@ -43,7 +43,7 @@ void Tester::Run(const std::shared_ptr<solver::ISolver>& solver, const std::stri
         }
         ++i;
 
-        if (i > 10)
+        if (i > 9)
             return;
     }
 }

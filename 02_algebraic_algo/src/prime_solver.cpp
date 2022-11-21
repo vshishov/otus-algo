@@ -144,9 +144,9 @@ uint64_t EratosEvenPrimeSolver::Prime(int N) {
 }
 
 
-//-------------------------
-// class EratosOptimPrimeSolver
-//-------------------------
+///-------------------------
+/// class EratosOptimPrimeSolver
+///-------------------------
 uint64_t EratosEvenBitsPrimeSolver::Prime(int N) {
     if (N == 1) return 0;
     if (N == 2) return 1;

@@ -17,11 +17,14 @@ int main(int argc, char** argv) {
     ///   Fibonacci
     /// -------------
 
-//    tester.Run(std::make_shared<solver::RecursFibonacciSolver>(),
+    //    tester.Run(std::make_shared<solver::RecursFibonacciSolver>(),
+    //               "../../02_algebraic_algo/tests/4.Fibo/");
+
+//    tester.Run(std::make_shared<solver::IterFibonacciSolver>(),
 //               "../../02_algebraic_algo/tests/4.Fibo/");
 
-        tester.Run(std::make_shared<solver::IterFibonacciSolver>(),
-                   "../../02_algebraic_algo/tests/4.Fibo/");
+    tester.Run(std::make_shared<solver::BinetFibonacciSolver>(),
+               "../../02_algebraic_algo/tests/4.Fibo/");
 
     /// ------------
     ///    Primes

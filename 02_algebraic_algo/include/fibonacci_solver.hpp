@@ -9,8 +9,9 @@ namespace solver {
 
 class BigInt {
 public:
-    BigInt(int n = 0);
-    BigInt(const BigInt& a);
+    BigInt(uint64_t n = 0);
+    BigInt(BigInt& a);
+    BigInt& operator=(const BigInt&);
 
     std::size_t Length() const;
     std::string ToStr() const;
@@ -27,18 +28,23 @@ class BaseFibonacciSolver : public ISolver {
 public:
     ResultData Solve(const InputData&) override;
 
-protected:
     virtual BigInt Fibo(int) = 0;
 };
 
 class RecursFibonacciSolver : public BaseFibonacciSolver {
-protected:
-    BigInt Fibo(int N) override;
+public:
+    BigInt Fibo(int) override;
 };
 
 class IterFibonacciSolver : public BaseFibonacciSolver {
-protected:
+public:
     BigInt Fibo(int N) override;
 };
+
+class BinetFibonacciSolver : public BaseFibonacciSolver {
+public:
+    BigInt Fibo(int N) override;
+};
+
 
 }  // namespace solver

@@ -1,20 +1,27 @@
 #include "fibonacci_solver.hpp"
 
 #include <iostream>
-#include <sstream>
 
 #include <boost/multiprecision/cpp_int.hpp>
 
 namespace solver {
 
-BigInt::BigInt(int n) {
+///--------------------------------
+///   class BigInt
+///--------------------------------
+BigInt::BigInt(uint64_t n) {
     do {
         data.push_back(n % 10);
         n /= 10;
     } while (n);
 }
 
-BigInt::BigInt(const BigInt& a) {}
+BigInt::BigInt(BigInt& a) { data = a.data; }
+
+BigInt& BigInt::operator=(const BigInt& a) {
+    data = a.data;
+    return *this;
+}
 
 std::size_t BigInt::Length() const { return data.size(); }
 
@@ -57,11 +64,16 @@ std::ostream& operator<<(std::ostream& out, const BigInt& a) {
     return out;
 }
 
+///--------------------------------
+///   class RecursFibonacciSolver
+///--------------------------------
 ResultData BaseFibonacciSolver::Solve(const InputData& input) {
-    //    return std::to_string(Fibo(std::stoi(input[0])));
     return Fibo(std::stoi(input[0])).ToStr();
 }
 
+///--------------------------------
+///   class RecursFibonacciSolver
+///--------------------------------
 // Only 7 of tests
 BigInt RecursFibonacciSolver::Fibo(int N) {
     uint64_t count = 0;
@@ -88,9 +100,19 @@ BigInt IterFibonacciSolver::Fibo(int N) {
         c = a + b;
         a = b;
         b = c;
-        std::cout << c << std::endl;
     }
     return b;
+}
+
+///--------------------------------
+///   class BinetFibonacciSolver
+///--------------------------------
+BigInt BinetFibonacciSolver::Fibo(int N) {
+    double sqrt_5 = std::sqrt(5);
+    double phi = (1 + sqrt_5) / 2;
+    double result = (std::pow(phi, N) - std::pow(-phi, -N)) / sqrt_5;
+
+    return (uint64_t)result;
 }
 
 }  // namespace solver
